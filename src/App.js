@@ -32,7 +32,7 @@ function App() {
       <Navbar/>
       <Alert alert={alert} />
       <div className='container'>
-      <h1>This is iNotebook</h1>
+      {/* <h1>This is iNotebook</h1> */}
       <Routes>
         <Route path="/" element={<Home showAlert={showAlert}/>} />
         <Route path="/about" element={<About />} />

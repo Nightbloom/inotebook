@@ -40,6 +40,7 @@ const Signup = (props) => {
 
     return (
         <div>
+            <h2>Create an Account to continue</h2>
             <form className='container' onSubmit={handleSubmit}>
             <div className="mb-3">
                 {/* value={credentials.email} onChange={onChange} */}
