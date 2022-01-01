@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const Login = () => {
 
     const [credentials, setCredentials] = useState({email: "", password: ""})
+    let navigate = useNavigate();
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
@@ -16,6 +19,14 @@ const Login = () => {
         });
         const json = await response.json()
         console.log(json);
+        if(json.success){
+            // Save the auth token redirect 
+            localStorage.setItem('token', json.authtoken);
+            navigate("/");
+        }
+        else{
+            alert("Invalid credentials")
+        }
     }
 
     const onChange = (e)=>{
@@ -29,7 +40,6 @@ const Login = () => {
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                 <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name='email' aria-describedby="emailHelp"/>
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
