@@ -25,10 +25,10 @@ const Navbar = () => {
               </li>
             </ul>
             <form className="d-flex">
-              <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
-              <Link className="btn btn-primary mx-2" to="/signup" role="button">SignUp</Link>
-              <input className="form-control me-1 mx-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success mx-2" type="submit">Search</button>
+              <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
+              <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
+              <input className="form-control me-1 mx-1" type="search" placeholder="Search" aria-label="Search"/>
+              <button className="btn btn-outline-success mx-1" type="submit">Search</button>
             </form>
           </div>
         </div>
